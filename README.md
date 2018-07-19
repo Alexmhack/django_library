@@ -38,3 +38,8 @@ books
 you can use html in help_text argument
 
 UUIDField is used for id field to set it as the primary_key of the model
+LOAN_STATUS has key-value pairs where values will be displayed to the users with corresponding 
+keys stored in the database
+
+status has default 'm' because at first book is not in the shelves so not available, due_back
+is the date when the book is expected to be returned from the borrower
