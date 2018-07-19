@@ -39,3 +39,7 @@ class BookListView(generic.ListView):
 		print(type(context))
 		context['book_title'] = "Books List"
 		return context
+
+
+class BookDetailView(generic.ListView):
+	model = Book

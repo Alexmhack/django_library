@@ -115,3 +115,6 @@ URL to be captured, enclosing the name of the variable that the view can use to 
 ured data. For example, <something> , will capture the marked pattern and pass the value 
 to the view as a variable "something". You can optionally precede the variable name with a 
 converter specification that defines the type of data (int, str, slug, uuid, path).
+
+all we need to do for creating catalog/book_detail.html is pass the model = Book to 
+BookDetailView
