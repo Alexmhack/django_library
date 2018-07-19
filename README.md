@@ -25,3 +25,5 @@ now let's run makemigrations and migration
 
 now on running the server, paste the link in browser and you will be redirected to the url that
 we have set and an error page occurs because we have no urls set in catalog.py
+
+Genre model will have a name field and __str__ method
