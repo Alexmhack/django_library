@@ -27,3 +27,14 @@ now on running the server, paste the link in browser and you will be redirected 
 we have set and an error page occurs because we have no urls set in catalog.py
 
 Genre model will have a name field and __str__ method
+
+In Book model, author has ForeignKey because a author can have many books but a book can have 
+only one author and, Author as a string because it has not been declared yet in the file
+(in practice a book might have multiple authors, but not in this implementation!)
+
+genre is a manytomany field because a book can have many genres and a genre can be for many 
+books
+
+you can use html in help_text argument
+
+UUIDField is used for id field to set it as the primary_key of the model
