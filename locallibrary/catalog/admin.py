@@ -6,13 +6,13 @@ from .models import Book, BookInstance, Genre, Author, Language
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('title', 'author', 'display_genre')
 
 
 # admin.site.register(Author)
 
 class AuthorAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
 
 
 admin.site.register(Author, AuthorAdmin)
@@ -21,7 +21,8 @@ admin.site.register(Author, AuthorAdmin)
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('status', 'due_back')
+	list_filter = ('status', 'due_back')
 
 
 admin.site.register(Language)

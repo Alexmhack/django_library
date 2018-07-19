@@ -60,3 +60,8 @@ Create the superuser using the createsuperuser command and log into the admin si
 we are editing the admin models and passing our own admin classes for Author, Book and 
 BookInstance, Genre and Language only have one fields so its useless for those models
 
+we cannot directly display the genre field since it is a manytomany field so we use display_
+genre to call the function display_genre in the Book model class and use it as a element in list_display tuple
+
+we can also use list_filter to make a filter box for the elements in the tuple, those elements 
+are actual names of fields in the models
