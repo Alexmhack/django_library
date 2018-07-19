@@ -83,3 +83,6 @@ itself
 
 then we can use the inlines attribute for the admin.ModelAdmin class and pass in our 
 admin.TabularInline class in a list
+
+the same approach we used for the Author detail view and added Book objects for each author
+in TabularInline style
