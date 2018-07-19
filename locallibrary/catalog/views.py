@@ -10,7 +10,7 @@ def index(request):
 	num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 	num_authors = Author.objects.count()
 	num_filter_book = Book.objects.filter(author__first_name__startswith='Robert').count()
-	num_genres = Genre.objects.filter('Business').count()
+	num_genres = Genre.objects.count()
 
 	context = {
 		'num_books': num_books,
@@ -32,14 +32,13 @@ class BookListView(generic.ListView):
 	# template_name = 'books/book_list.html'
 	
 	def get_queryset(self):
-		return Book.objects.filter(title__icontains='Rich')[:5]
+		return Book.objects.all()[:5]
 
-	def get_context_data(self):
+	def get_context_data(self, **kwargs):
 		context = super(BookListView, self).get_context_data(**kwargs)
-		print(type(context))
 		context['book_title'] = "Books List"
 		return context
 
 
-class BookDetailView(generic.ListView):
+class BookDetailView(generic.DetailView):
 	model = Book
