@@ -23,6 +23,11 @@ class Book(models.Model):
 	def get_absolute_url(self):
 		return reverse('book-detail', args=[str(self.id)])
 
+	def display_genre(self):
+		return ', '.join([genre.name for genre in self.genre.all()[:3]])
+
+	display_genre.short_description = 'Genre'
+
 
 class Language(models.Model):
 	name = models.CharField(max_length=200, help_text="Enter a books's natural language (e.g. English, French, Hindi etc.)")
