@@ -54,3 +54,5 @@ model that will have a name and __str__ method and will be used as a ForeignKey 
 with null=True and models.SET_NULL as we don't want to delete the objects related to it
 
 It is recommended to have a seperate model for each object in our models.
+
+Create the superuser using the createsuperuser command and log into the admin site
