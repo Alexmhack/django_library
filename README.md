@@ -69,3 +69,8 @@ are actual names of fields in the models
 The fields attribute lists just those fields that are to be displayed on the form, in order. 
 Fields are displayed vertically by default, but will display horizontally if you further group 
 them in a tuple (as shown in the "date" fields above).
+
+you can add sections to group related model information within the detail form by using the
+fieldset attribute
+
+Each section has its own title and associated tuple of fields in a dictionary.
