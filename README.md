@@ -86,3 +86,10 @@ admin.TabularInline class in a list
 
 the same approach we used for the Author detail view and added Book objects for each author
 in TabularInline style
+
+We have made a templates folder inside the catalog and in there we have our base html file
+index file and static folder that contains the css folder for the CSS files
+
+We extends the index.html to base_generic.html and load our static files in base html file
+
+The urls are not hardcoded, they are defined using the url template tag
