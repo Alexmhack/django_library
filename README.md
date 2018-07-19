@@ -93,3 +93,18 @@ index file and static folder that contains the css folder for the CSS files
 We extends the index.html to base_generic.html and load our static files in base html file
 
 The urls are not hardcoded, they are defined using the url template tag
+
+We have used a class as a view by the as_view()
+
+the generic from django.views has ListView with which we can just use model = Book and
+it will query all the objects from DB and render a template at templates/catalog/book_list.html
+
+within the template you can access the list of books with variable object_list or book_list
+
+if you want your own name for accessing the objects then you can change it and also specify
+your own template path
+
+instead of just changing the queryset variable you can change the default get_queryset()
+
+the pattern for rendering our new data along with our model is to get existing content
+from superclass, then add new context information and then return the new context
