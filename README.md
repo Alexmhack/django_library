@@ -108,3 +108,10 @@ instead of just changing the queryset variable you can change the default get_qu
 
 the pattern for rendering our new data along with our model is to get existing content
 from superclass, then add new context information and then return the new context
+
+For the book-detail path the URL pattern uses a special syntax to capture the specific id of 
+the book that we want to see. The syntax is very simple: angle brackets define the part of the 
+URL to be captured, enclosing the name of the variable that the view can use to access the capt
+ured data. For example, <something> , will capture the marked pattern and pass the value 
+to the view as a variable "something". You can optionally precede the variable name with a 
+converter specification that defines the type of data (int, str, slug, uuid, path).
