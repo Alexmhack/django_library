@@ -65,3 +65,7 @@ genre to call the function display_genre in the Book model class and use it as a
 
 we can also use list_filter to make a filter box for the elements in the tuple, those elements 
 are actual names of fields in the models
+
+The fields attribute lists just those fields that are to be displayed on the form, in order. 
+Fields are displayed vertically by default, but will display horizontally if you further group 
+them in a tuple (as shown in the "date" fields above).
