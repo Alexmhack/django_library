@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-from django.url import reverse
+from django.urls import reverse
 
 
 class Genre(models.Model):
