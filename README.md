@@ -52,3 +52,5 @@ representation and reverse for the author
 If anybody donates some books to library of another language then for that we have a seperate
 model that will have a name and __str__ method and will be used as a ForeignKey in Book model
 with null=True and models.SET_NULL as we don't want to delete the objects related to it
+
+It is recommended to have a seperate model for each object in our models.
