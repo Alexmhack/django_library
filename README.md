@@ -118,3 +118,11 @@ converter specification that defines the type of data (int, str, slug, uuid, pat
 
 all we need to do for creating catalog/book_detail.html is pass the model = Book to 
 BookDetailView
+
+## Pagination
+
+at the moment we have only 5 books but if we have lots of books then to display them onto
+a single page will take lots of time so django has Pagination for this, just add a variable
+paginate_by = int value and the objects for that View will be limited to that int value
+
+to access page 2 you would use the URL: /catalog/books/?page=2. and so on

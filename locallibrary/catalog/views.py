@@ -26,6 +26,7 @@ def index(request):
 
 class BookListView(generic.ListView):
 	model = Book
+	paginate_by = 10
 	
 	# context_object_name = 'my_book_list'  # your own name for the list of books
 	# queryset = Book.objects.filter(title__icontains='s')[:5]  # get 5 books with title 's'
