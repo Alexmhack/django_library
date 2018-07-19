@@ -74,3 +74,12 @@ you can add sections to group related model information within the detail form b
 fieldset attribute
 
 Each section has its own title and associated tuple of fields in a dictionary.
+
+It would be very nice if we could see the BookInstance information of a particular book in
+its detail view itself below the book info, to do that we can make a inline section of that
+model by creating another class which inherits from admin.TabularInline and setting the model 
+to BookInstance and extra = 0 so that no other BookInstances are shown except for the Book 
+itself
+
+then we can use the inlines attribute for the admin.ModelAdmin class and pass in our 
+admin.TabularInline class in a list
