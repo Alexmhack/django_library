@@ -24,11 +24,19 @@ class Book(models.Model):
 		return reverse('book-detail', args=[str(self.id)])
 
 
+class Language(models.Model):
+	name = models.CharField(max_length=200, help_text="Enter a books's natural language (e.g. English, French, Hindi etc.)")
+
+	def __str__(self):
+		return self.name
+		
+
 class BookInstance(models.Model):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular book in whole library')
 	book = models.ForeignKey(Book, on_delete=models.SET_NULL, null=True)
 	imprint = models.CharField(max_length=200)
 	due_back = models.DateField(null=True, blank=True)
+	language = models.ForeignKey(Language, on_delete=models.SET_NULL, null=True)
 
 	LOAN_STATUS = (
 		('m', 'Maintenance'),

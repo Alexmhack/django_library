@@ -48,3 +48,7 @@ is the date when the book is expected to be returned from the borrower
 
 Author model contains the first_name last_name DOB DOD(optional) and the ordering in model, str 
 representation and reverse for the author
+
+If anybody donates some books to library of another language then for that we have a seperate
+model that will have a name and __str__ method and will be used as a ForeignKey in Book model
+with null=True and models.SET_NULL as we don't want to delete the objects related to it
