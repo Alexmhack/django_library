@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# django migration files
+catalog/migrations/0001_initial.py
+catalog/migrations/0002_auto_20180719_0955.py
