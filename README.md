@@ -37,9 +37,14 @@ books
 
 you can use html in help_text argument
 
+BookInstance represents the specific copy of a book someone might borrow
+
 UUIDField is used for id field to set it as the primary_key of the model
 LOAN_STATUS has key-value pairs where values will be displayed to the users with corresponding 
 keys stored in the database
 
 status has default 'm' because at first book is not in the shelves so not available, due_back
 is the date when the book is expected to be returned from the borrower
+
+Author model contains the first_name last_name DOB DOD(optional) and the ordering in model, str 
+representation and reverse for the author
