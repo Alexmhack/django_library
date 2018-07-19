@@ -8,8 +8,8 @@ def index(request):
 	num_instances = BookInstance.objects.all().count()
 	num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 	num_authors = Author.objects.count()
-	num_filter_book = Book.objects.filter(title__exact='Rich Dad Poor Dad').count()
-	num_genres = Genre.objects.filter(name__exact='Education').count()
+	num_filter_book = Book.objects.filter(author__first_name__startswith='Robert').count()
+	num_genres = Genre.objects.filter('Business').count()
 
 	context = {
 		'num_books': num_books,
