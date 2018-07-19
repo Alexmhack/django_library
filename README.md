@@ -56,3 +56,7 @@ with null=True and models.SET_NULL as we don't want to delete the objects relate
 It is recommended to have a seperate model for each object in our models.
 
 Create the superuser using the createsuperuser command and log into the admin site
+
+we are editing the admin models and passing our own admin classes for Author, Book and 
+BookInstance, Genre and Language only have one fields so its useless for those models
+
