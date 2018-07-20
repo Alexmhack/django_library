@@ -132,3 +132,6 @@ The same way we made the BookListView for Books we will make replicate it for Au
 Below is the way through which we pass argument to the url tags
 <p><strong>Author:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author 
 }}</a></p>
+
+We can use the authentication urls from django framework just by adding an include in the 
+root urls which we will be implemented after account/
