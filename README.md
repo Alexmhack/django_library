@@ -126,3 +126,5 @@ a single page will take lots of time so django has Pagination for this, just add
 paginate_by = int value and the objects for that View will be limited to that int value
 
 to access page 2 you would use the URL: /catalog/books/?page=2. and so on
+
+The same way we made the BookListView for Books we will make replicate it for Author
