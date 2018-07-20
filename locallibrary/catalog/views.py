@@ -53,3 +53,7 @@ class AuthorListView(generic.ListView):
 		context = super(AuthorListView, self).get_context_data(**kwargs)
 		context['author_page_title'] = 'Authors List'
 		return context
+
+
+class AuthorDetailView(generic.DetailView):
+	model = Author

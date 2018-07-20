@@ -128,3 +128,7 @@ paginate_by = int value and the objects for that View will be limited to that in
 to access page 2 you would use the URL: /catalog/books/?page=2. and so on
 
 The same way we made the BookListView for Books we will make replicate it for Author
+
+Below is the way through which we pass argument to the url tags
+<p><strong>Author:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author 
+}}</a></p>
