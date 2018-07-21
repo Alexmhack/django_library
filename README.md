@@ -140,6 +140,9 @@ We can set permissions for selected users on selected instances of a model by gi
 permissions variable in meta class and then giving the permission value and the permission
 display value in a tuple
 
+** But after settings or changing anything in models.py don't forget to makemigrations and run
+migrations
+
 those permissions will be displayed in the admin page in groups and users page where we can 
 select permission and move it, there the display value will appear
 

@@ -35,7 +35,7 @@
             <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
           {% endif %}
           <hr>
-          {% if perms.catalog.can_mark_returned %}
+          {% if perms.catalog.is_library_member %}
             <p>staff</p>
             <li><a href="{% url 'all-borrowed' %}">All Borrowed Books</a></li>
           {% endif %}
