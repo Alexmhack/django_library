@@ -135,3 +135,19 @@ Below is the way through which we pass argument to the url tags
 
 We can use the authentication urls from django framework just by adding an include in the 
 root urls which we will be implemented after account/
+
+We can set permissions for selected users on selected instances of a model by giving the 
+permissions variable in meta class and then giving the permission value and the permission
+display value in a tuple
+
+those permissions will be displayed in the admin page in groups and users page where we can 
+select permission and move it, there the display value will appear
+
+to use the permission in templates we use the 'perms' term with the app name and the permission
+value set in the tuple
+
+e.g. :-   
+		class meta:
+			permissions = (('is_library_member', 'A Library Member'))
+		
+		{% if perms.catalog.can_mark_returned %}code here...{% endif %}
