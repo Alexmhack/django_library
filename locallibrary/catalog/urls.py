@@ -9,6 +9,12 @@ urlpatterns = [
 	path('author/<int:pk>', views.AuthorDetailView.as_view(), name='author-detail'),
 ]
 
+# loaned books urlmapper
 urlpatterns += [
 	path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]
+
+# all borrowed urlmapper
+urlpatterns += [
+	path('borrowed/', views.AllBorrowedBookListView.as_view(), name='all-borrowed'),
 ]
