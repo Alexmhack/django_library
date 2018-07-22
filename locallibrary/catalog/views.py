@@ -5,11 +5,12 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import permission_required
 
 import datetime
 
 from .models import Book, BookInstance, Genre, Author
-from .forms import RenewBookForm
+from .forms import RenewBookModelForm
 
 
 def index(request):
@@ -97,7 +98,7 @@ def renew_book_librarian(request, pk):
 	# if this is a POST request then process the Form data
 	if request.method == 'POST':
 		# create a form instance and populate it with data from request
-		form = RenewBookForm(request.POST)
+		form = RenewBookModelForm(request.POST)
 
 		# check if form is valid
 		if form.is_valid():
@@ -110,6 +111,6 @@ def renew_book_librarian(request, pk):
 	# if this is a GET or any other method then create default form
 	else:
 		default_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
-		form = RenewBookFrom(initial={'renewal_date': default_renewal_date, })
+		form = RenewBookModelForm(initial={'due_back': default_renewal_date, })
 
 	return render(request, 'catalog/book_renewal_form.html', {'form': form, 'bookinst': bookinst})
