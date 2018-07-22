@@ -30,14 +30,16 @@
           <li><a href="{% url 'my-borrowed' %}">Borrowed Books</a></li>
           {% if user.is_authenticated %}
             <li>User: {{ user.get_username }}</li>
-            <li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
-          {% else %}
-            <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
-          {% endif %}
-          <hr>
-          {% if perms.catalog.is_library_member %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% if perms.catalog.is_library_member %}
+            <hr>
             <p>staff</p>
             <li><a href="{% url 'all-borrowed' %}">All Borrowed Books</a></li>
+            <li><a href="{% url 'book_create' %}">Create Book</a></li>
+            <li><a href="{% url 'author_create' %}">Create Author</a></li>
+          {% endif %}
+          {% else %}
+            <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
           {% endif %}
       </ul>
      {% endblock %}
