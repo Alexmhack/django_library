@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import permission_required
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 import datetime
 
@@ -114,3 +116,22 @@ def renew_book_librarian(request, pk):
 		form = RenewBookModelForm(initial={'due_back': default_renewal_date, })
 
 	return render(request, 'catalog/book_renewal_form.html', {'form': form, 'bookinst': bookinst})
+
+
+class AuthorCreate(CreateView, PermissionRequiredMixin):
+	model = Author
+	fields = '__all__'
+	initial = {'date_of_death': '22/07/2018'}
+	permission_required = 'catalog.is_library_member'
+
+
+class AuthorUpdate(UpdateView, PermissionRequiredMixin):
+	model = Author
+	fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+	permission_required = 'catalog.is_library_member'
+
+
+class AuthorDelete(DeleteView, PermissionRequiredMixin):
+	model = Author
+	success_url = reverse_lazy('authors')
+	permission_required = 'catalog.is_library_member'
