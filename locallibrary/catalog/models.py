@@ -27,7 +27,10 @@ class Book(models.Model):
 		return reverse('book-detail', args=[str(self.id)])
 
 	def display_genre(self):
-		return ', '.join([genre.name for genre in self.genre.all()[:3]])
+		return ', '.join([genre.name for genre in self.genre.all()])
+
+	class Meta:
+		permissions = (('is_library_member', 'A Library Member'),)
 
 	display_genre.short_description = 'Genre'
 
@@ -78,6 +81,7 @@ class Author(models.Model):
 
 	class Meta:
 		ordering = ['last_name', 'first_name']
+		permissions = (('is_library_member', 'A Library Member'),)
 
 	def get_absolute_url(self):
 		return reverse('author-detail', args=[str(self.id)])
