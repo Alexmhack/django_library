@@ -107,3 +107,9 @@ venv.bak/
 locallibrary/catalog/migrations/0001_initial.py
 locallibrary/catalog/migrations/0002_auto_20180719_0955.py
 locallibrary/catalog/migrations/
+
+# Text backup files
+*.bak
+
+#Database
+*.sqlite
