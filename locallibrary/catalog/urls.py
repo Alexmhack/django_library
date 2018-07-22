@@ -18,3 +18,8 @@ urlpatterns += [
 urlpatterns += [
 	path('borrowed/', views.AllBorrowedBookListView.as_view(), name='all-borrowed'),
 ]
+
+# forms url, uuid is for matching valid uuid and pk is just convention name we are catching
+urlpatterns += [
+	path('book/<uuid:pk>/renew/', views.renew_book_librarian, name='renew-book-librarian'),
+]

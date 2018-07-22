@@ -154,3 +154,22 @@ e.g. :-
 			permissions = (('is_library_member', 'A Library Member'))
 		
 		{% if perms.catalog.can_mark_returned %}code here...{% endif %}
+
+Django provides numerous places where you can validate your data. The easiest way to validate 
+a single field is to override the method clean_<fieldname>() for the field you want to check. 
+So for example, we can validate that entered renewal_date values are between now and 4 weeks 
+by implementing clean_renewal_date() as shown below.
+
+Django translation functions ugettext_lazy() which is good practise if you want to translate 
+your site later
+
+In our renew_date_form we get the object from get_object_or_404 with the arg pk and store it
+next we check if this is a POST request then we create a form with the form data and
+clean it and store it in the due_back value of our bookinstance and then store the object
+using .save(), the else clause is for the left method that is the GET method in which case
+we just render the initial form with the default date of three weeks later
+
+After creating a form we render the form with the template and with our context
+
+We can also access and store the form data using the request.POST or request.GET but this is
+not recommended, cleaned_data cleans the data in python friendly types
