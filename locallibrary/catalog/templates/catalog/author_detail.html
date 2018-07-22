@@ -26,4 +26,9 @@
 			{% endfor %}
 		</ul>
 	</div>
+	<div>
+		<hr>
+		<p>Click here to <a href="{% url 'author_update' author.id %}">edit</a> author details</p>
+		<p>Click here to <a href="{% url 'author_delete' author.id %}">delete</a> author</p>
+	</div>
 {% endblock content %}
