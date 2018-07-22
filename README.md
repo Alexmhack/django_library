@@ -176,3 +176,14 @@ not recommended, cleaned_data cleans the data in python friendly types
 
 We have to restrict the form to only librarians so we can make another permission but we can
 also use the @permission_required decorator which will use the is_librarian_member permission
+
+In the renew books form template we have the form action set to '', action is the place where 
+the form will be send after pressing the Submit button, we want to send the form to the same 
+page with a method of POST.
+
+We should add the csrf_token to every template that has a form with POST method, cross-site 
+request forgery
+
+We just passed our {{ form }} context inside table tags which is all we need to get the form
+in a nice table format, instead of table tags we can alos use {{ form.as_table }}
+
