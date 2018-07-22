@@ -187,3 +187,21 @@ request forgery
 We just passed our {{ form }} context inside table tags which is all we need to get the form
 in a nice table format, instead of table tags we can alos use {{ form.as_table }}
 
+We can make test for our project so that we don't have to waste our time testing the code that
+we have written ourselves, for that django makes file tests.py but we can make our custom
+folder named tests and files starting with 'test' and ends at .py
+
+To run our tests we can just mention the folder in which our tests lie using the manage.py 
+
+python manage.py tests 		=> this command will run all the files inside the folder starting
+with prefix 'test'
+
+==commands for running test==
+python manage.py test catalog.tests
+python manage.py test catalog.tests.test_models
+python manage.py test catalog.tests.test_models.AuthorModelTtest
+python manage.py test catalog.tests.test_models.AuthorModelTest.test_first_name_label
+
+In the test_models.py we cannot get the first_name by author.first_name.verbose_name because
+this will result into a string and not a handle of object that we can use for testing instead
+we use author's _meta attribute to get the instance of first_name
