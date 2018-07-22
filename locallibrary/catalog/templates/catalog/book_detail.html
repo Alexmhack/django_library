@@ -23,4 +23,11 @@
 	<p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
 	{% endfor %}
 	</div>
+	<div>
+		<hr>
+		{% if user.is_authenticated and perms.catalog.is_library_member %}
+			<p>Click here to <a href="{% url 'book_update' book.id %}">edit</a> Book details</p>
+			<p>Click here to <a href="{% url 'book_delete' book.id %}">delete</a> Book</p>
+		{% endif %}
+	</div>
 {% endblock content %}

@@ -27,8 +27,10 @@
 		</ul>
 	</div>
 	<div>
+		{% if user.is_authenticated and perms.catalog.is_library_member %}
 		<hr>
 		<p>Click here to <a href="{% url 'author_update' author.id %}">edit</a> author details</p>
 		<p>Click here to <a href="{% url 'author_delete' author.id %}">delete</a> author</p>
+		{% endif %}
 	</div>
 {% endblock content %}
