@@ -89,6 +89,7 @@ class AllBorrowedBookListView(PermissionRequiredMixin, generic.ListView):
 		return BookInstance.objects.filter(status__exact='o').order_by('due_back')
 
 
+@permission_required('catalog.is_library_member')
 def renew_book_librarian(request, pk):
 	# we will need BookInstance object with the pk from url
 	bookinst = get_object_or_404(BookInstance, pk=pk)

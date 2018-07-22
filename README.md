@@ -173,3 +173,6 @@ After creating a form we render the form with the template and with our context
 
 We can also access and store the form data using the request.POST or request.GET but this is
 not recommended, cleaned_data cleans the data in python friendly types
+
+We have to restrict the form to only librarians so we can make another permission but we can
+also use the @permission_required decorator which will use the is_librarian_member permission
