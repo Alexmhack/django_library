@@ -124,6 +124,7 @@ STATIC_URL = '/static/'
 
 # login redirects to the home page (Defualts to accounts/profile)
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
