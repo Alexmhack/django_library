@@ -8,7 +8,7 @@
 	<h1>All Borrowed Books</h1>
 	<ul>
 		{% for bookinst in bookinstance_list %}
-			<li><a href="{% url 'book-detail' bookinst.book.pk %}">{{ bookinst.book.title }}</a> To be returned on: <span class="{% if bookinst.is_overdue %}text-danger{% endif %}">({{ bookinst.due_back }})</span> <strong>From: {{ bookinst.borrower }}</strong></li>
+			<li><a href="{% url 'book-detail' bookinst.book.pk %}">{{ bookinst.book.title }}</a> To be returned on: <span class="{% if bookinst.is_overdue %}text-danger{% endif %}">({{ bookinst.due_back }})</span> <strong>From: {{ bookinst.borrower }}</strong></li><span> {% if perms.catalog.is_library_member %}- <a href="{% url 'renew-book-librarian'  %}">Renew</a>{% endif %}</span>
 		{% endfor %}
 	</ul>
 {% endblock content %}
